@@ -31,3 +31,12 @@
 - Builder: Claude (host). Files: dedup.py, test_dedup.py.
 - Note: code was written before the git baseline existed; baseline commit contains only PLAN.md + this log (pre-build state), code is untracked relative to it.
 - Proof: `python test_dedup.py` (3.6.8) -> OK ; `py -3.12 test_dedup.py` -> OK.
+
+## Inspection 1 — BLOCKED (1/2)
+- Result: C:\Users\Samsung\AppData\Local\Temp\claudex-c8qqwgl_\result.json ; fresh session 01a0f317-75ff-7681-b912-c06f6972386d
+- Snapshot sha256 279d4c3e...; plan sha256 d5a5444f... (revised, unapproved)
+- Response: BLOCKED, no findings. "Repository reads were blocked by the execution policy, including attempts to read dedup.py."
+- Host analysis: same Codex Windows read-only sandbox block as plan round 1. Retrying unchanged would fail identically; not retried. dedup.py/test_dedup.py have NO independent inspection.
+
+## Closed
+- User chose to finish without further inspection. Final state: dedup.py, test_dedup.py uncommitted; no independent plan approval or code inspection.
